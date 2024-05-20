@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import video from '../../pictures/video.mp4'
 import logo from '../../logo.png'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import getAllProducts from '../../services/products'
 import ScrollToTopNavLink from '../ScrollToTopNavLink'
 
