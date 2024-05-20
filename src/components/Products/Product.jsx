@@ -34,7 +34,7 @@ const Product = () => {
     <div id='box'>
       {isTypeWig && (
       <div>
-        <h1>{item?.name}</h1>
+        <h1 className='h1Pro'>{item?.name}</h1>
         <div id='container'>
             <div className='productImgBox'><img className='productImg' src={item?.img} alt={item?.name} /></div>
             <div className='productData'>
@@ -68,7 +68,7 @@ const Product = () => {
 
     {!isTypeWig && (
       <div>
-        <h1>{item?.name}</h1>
+        <h1 className='h1Pro'>{item?.name}</h1>
         <div id='container'>
             <div className='productImgBox'><img className='productImg' src={item?.img} alt={item?.name} /></div>
             <div className='productData'>

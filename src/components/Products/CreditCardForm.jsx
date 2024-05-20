@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Cards from 'react-credit-cards'; 
-import 'react-credit-cards/es/styles-compiled.css'; 
+import Cards from 'react-credit-cards-2'; 
+import 'react-credit-cards-2/dist/es/styles-compiled.css';
 import { Link } from 'react-router-dom';
 
 function CreditCardForm() {

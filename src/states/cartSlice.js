@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import toast from "react-hot-toast";
 
 const initialState = {
     sum: 0,
@@ -14,7 +13,6 @@ const cartSlice = createSlice(
             setAddToCart: (state, action) =>{
                 const { item, quantity } = action.payload;
                 const isItemInCart = state.arr.findIndex(product => product.item.name === item.name); 
-                // מחזירה -1 אם הערך לא נמצא, אם כן את מספר האינדקס של המערך
 
                 if (isItemInCart !== -1) {
                     state.arr[isItemInCart].quantity += quantity;

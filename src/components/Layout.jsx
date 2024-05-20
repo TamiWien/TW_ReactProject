@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 import getAllProducts from '../services/products';
 import logo from '../logo.png'
 import logo_dark from '../logo_dark.png'
-import { FaBars, FaFacebook, FaInstagram, FaOpencart, FaRegCopyright, FaRegHeart, FaTiktok, FaTimes, FaUserCircle, FaYoutube } from "react-icons/fa";
+import { FaBars, FaFacebook, FaInstagram, FaRegCopyright, FaRegHeart, FaTiktok, FaTimes, FaUserCircle, FaYoutube } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 import { toCartCount } from '../states/cartSlice';
 import { FaCartShopping } from 'react-icons/fa6';
@@ -11,8 +11,6 @@ import { FaCartShopping } from 'react-icons/fa6';
 const Layout = () => {
   const secendMenuRef = useRef(null);
   const [productsList, setProductsList] = useState([])
-  const [keyFilter, setKeyFilter] = useState({});
-  const [valueFilter, setValueFilter] = useState({});
 
   const countCart = useSelector(toCartCount);
 
@@ -21,11 +19,7 @@ const Layout = () => {
       secendMenuRef.current.style.display = 'block';
     }
   }
-  // const menuOut = () => {
-  //   if (secendMenuRef.current) {
-  //     secendMenuRef.current.style.display = 'none';
-  //   }
-  // }
+
   const fetchData = async () =>{
     try {
       const products = await getAllProducts();
@@ -51,11 +45,6 @@ const Layout = () => {
     Menu.style.height = mobileMenuOpen ? '60px' : '184px';
   }
   };
-
-  // const handleFilterChange = (newKeyFilter, newValueFilter) => {
-  //   setKeyFilter(newKeyFilter);
-  //   setValueFilter(newValueFilter);
-  // };
 
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -87,24 +76,6 @@ const Layout = () => {
               <NavLink className='nav' to="/ourStory">Our Story</NavLink>
               <NavLink className='nav' to="/contact">Contact Us</NavLink>             
               <NavLink className='nav' to="/store" >Store</NavLink>
-              <>
-              {/*//open menu/// <NavLink className='nav' to="/store" onMouseOver={menuUp} >Store
-              {(
-                <div ref={secendMenuRef} id='secendMenu' onMouseOut={menuOut}>
-                  {[...new Set(productsList.map(c => c.Color))].map((Color, index) => (
-                    <div key={index}>
-                      <Link className='listMenu' to={'/store?index'} onClick={() => handleFilterChange({Color},'Color')}>{Color}</Link>
-                    </div>
-                  ))}
-                  {productsList.map((c, index) => (
-                    <div key={index}>
-                      <NavLink className='listMenu' to={`/store/${c.name}`}>{c.name}</NavLink>
-                    </div>
-                  ))}
-                </div>
-              )}
-              </NavLink> */}
-              </>
           </div>
       </div>
       <div className='navIcoBox'>
@@ -146,7 +117,7 @@ const Layout = () => {
                 </div>
           </div>
       </div>
-      <div id='by'><FaRegCopyright />Tamar Wienet & Chani Alvitskey</div>
+      <div id='by'><FaRegCopyright />Tamar Wienet</div>
     </>
   )
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import AddToCart from './AddToCart'
 import { FaXmark } from 'react-icons/fa6'
 import { FaCheck } from 'react-icons/fa'
 import AddToCartPop from './AddToCartPop'
